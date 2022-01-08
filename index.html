@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+
+    <script
+      src="https://kit.fontawesome.com/fe8209d2ba.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <div id="loginForm">
+      <div id="container">
+        <div id="left-side">
+          <h2>Login</h2>
+          <p>
+            By logging in you agree to the ridicilously long terms no one
+            bothered to read.
+          </p>
+        </div>
+
+        <div id="right-side">
+          <label id="first-label" for="email">Email</label>
+          <input type="email" placeholder="me@example.com" v-model="inputEmail"/>
+
+          <div id="label-and-icon">
+            <label for="password">Password</label>
+            <a href="#" v-on:click="showPassword">
+              <i class="fa fa-eye-slash" v-if="hidden"></i>
+              <i class="far fa-eye" v-if="!hidden"></i>
+            </a>
+          </div>
+          <input :type="inputType" placeholder="Enter a password" v-model="inputPassword" />
+
+          <button @click="validateUser">Log in</button>
+        </div>
+      </div>
+    </div>
+
+    <script src="https://unpkg.com/vue@next"></script>
+    <script>
+      const LoginForm = {
+        data() {
+          return {
+            test: "test",
+            hidden: true,
+            inputType: 'password',
+            inputEmail: '',
+            userEmail: 'mygreatemail@user.com',
+            inputPassword: '',
+            userPassword: 'mygreatpassword'
+          };
+        },
+        methods: {
+            // Changes the visibility of the input type attribute and toggles the eye icon
+            showPassword() {
+                this.hidden = !this.hidden
+                if(this.inputType == 'password') {
+                    this.inputType = 'text'
+                } else {
+                    this.inputType = 'password'
+                }
+            },
+            // Validates whether username and password are entered and validates the user
+            validateUser() {
+                if(this.inputEmail == '' && this.inputPassword == '') {
+                    alert("Email and password cannot be empty")
+                    if(this.inputEmail == this.userEmail && this.inputPassword == this.userPassword) {
+                        alert("You have entered the website you will be redirected soon")
+                    } else {
+                        alert("Incorrect email or password")
+                    }
+                }
+            }
+        }
+      };
+
+      Vue.createApp(LoginForm).mount("#loginForm");
+    </script>
+  </body>
+</html>

@@ -1,0 +1,70 @@
+body {
+    // CENTERING THE GROUPED ELEMENTS AND SETTING THE DISPLAY TO FLEX
+    div#container {
+        width: 600px;
+        margin: 150px auto;
+        display: flex;
+        flex-direction: row;
+        background-color: #DFE0E3;
+
+        // SETTING THE LEFT SIDE TO 300PX
+        div#left-side {
+            background-color: #fff;
+            width: 300px;
+            margin: 30px 0px;
+            padding: 20px;
+            // SETTING THE FONT STYLE OF h2, margins to position
+            h2 {
+                font-family: Arial, Helvetica, sans-serif;
+                margin: 25px 25px;
+            }
+            // SETTING THE FONT FAMILY OF P AND MARGINS TO POSITION
+            p {
+                font-family: Arial, Helvetica, sans-serif;
+                margin: 25px 25px;
+            }
+        }
+        
+
+        // SETTING THE RIGHT SIDE TO BE 300PX
+        div#right-side {
+            background-color: #32475C;
+            width: 300px;
+            padding: 20px;
+            // SETTING THE MARGINS FOR THE LABELS
+            label {
+                margin: 10px 10px 0px 40px;
+                color: #8598A5;
+            }
+            // SETTING THE LABEL DISPLAY TO BLOCK
+            label#first-label {
+                display: block;
+                margin-top: 30px;
+            }
+            // RESETING THE LOOK OF THE LINK
+            a {
+                text-decoration: none;
+                color: #D8E1E1;
+            }
+            // SETTING THE BUTTON DISPLAY TO BLOCK
+            button {
+                display: block;
+                margin: 10px 0px 10px 40px;
+                padding: 10px 40px;
+                width: 150px;
+            }
+            // SETTING THE INPUT MARGINS
+            input {
+                margin: 10px 40px;
+                background: transparent;
+                outline: none;
+                border: none;
+                color: #D8E1E1;
+            }
+            ::placeholder {
+                color: #D8E1E1;
+            }
+        }
+    }
+
+}
